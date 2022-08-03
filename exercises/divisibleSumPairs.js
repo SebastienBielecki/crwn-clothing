@@ -1,16 +1,15 @@
-function matchingStrings(strings, queries) {
-    let result = new Array(queries.length).fill(0);
+function findMedian(arr) {
     // Write your code here
-    for (let i=0; i<queries.length;i++) {
-        for (let string of strings) {
-            if (queries[i] === string) {
-                result[i]++;
-            }
-        }
-    }
-    return result;
+    arr.sort(function(a, b) {
+        return b - a;
+      });
     
+      console.log(arr);
+    const medianIndex = Math.floor(arr.length / 2);
+    //console.log(medianIndex);
+    return arr[medianIndex];
 }
 
-console.log(matchingStrings(["aba", "baba", "aba", "xzxb"], ["aba", "xzxb", "ab"]));
+console.log(findMedian([5,3,1,2,4]));
+console.log(findMedian([0,1,2,4,6,5,3]));
 
